@@ -6,7 +6,7 @@
 12ヶ月のインスタレーションでも5分のスケッチでも、このフレームワークはアーティストが必要なツールに簡単にアクセスできることを目指しています。
 
 <!-- The project was started out of a desire for a creative coding framework inspired by Processing, OpenFrameworks and Cinder, but for Rust. <sup>Named after [this](https://www.youtube.com/watch?v=A-Pkx37kYf4).</sup> -->
-このプロジェクトは、Processing、OpenFrameworks、Cinderにインスパイアされた、Rust用のクリエイティブなコーディングフレームワークが欲しいという願望から始まった。<sup>[this](https://www.youtube.com/watch?v=A-Pkx37kYf4).</sup>にちなんで命名。
+このプロジェクトは、Processing、OpenFrameworks、Cinderにインスパイアされた、Rust用のクリエイティブなコーディングフレームワークが欲しいという願望から始まった。<sup>[これ](https://www.youtube.com/watch?v=A-Pkx37kYf4) にちなんで命名。</sup>
 
 <!-- ## Goals -->
 ## ゴール

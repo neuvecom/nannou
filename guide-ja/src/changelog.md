@@ -16,31 +16,42 @@ nannouに対する顕著な変更は、すべて以下に記すべきである�
 
 # Version 0.19.0 (2024-01-17)
 
-- Add GL backend to default backends for better WASM support.
+<!-- - Add GL backend to default backends for better WASM support.
 - Add CI for testing the `wasm32-unknown-unknown` target.
 - Enable `wgpu/webgl` when `wasm` feature is enabled.
 - Merge the `nannou_egui` repo into the main `nannou` repo.
 - Move `nannou_conrod` and `nannou_timeline` into a new repository:
-  https://github.com/nannou-org/nannou_conrod. Both crates are deprecated in
-  favour of `nannou_egui`.
+  https://github.com/nannou-org/nannou_conrod. Both crates are deprecated in favour of `nannou_egui`.
 - Switch from `async-std` to `tokio` for async texture capture handling.
 - Switch `egui_wgpu_backend` to the in-tree `egui-wgpu`.
 - Update `egui` to `0.23`.
 - Update `wgpu` to `0.17`.
-- Update `winit` to `0.28`. (See #940).
+- Update `winit` to `0.28`. (See #940). -->
+- より良いWASMサポートのために、デフォルトのバックエンドにGLバックエンドを追加。
+- `wasm32-unknown-unknown` ターゲットをテストする CI を追加。
+- `wasm` 機能が有効な場合に `wgpu/webgl` を有効にするようにした。
+- `nannou_egui` リポジトリをメインの `nannou` リポジトリにマージした。
+- `nannou_conrod` と `nannou_timeline` を新しいリポジトリに移動した：
+  [https://github.com/nannou-org/nannou_conrod](https://github.com/nannou-org/nannou_conrod) 両方のクレートは `nannou_egui` を優先して非推奨とする。
+- 非同期テクスチャキャプチャの処理を `async-std` から `tokio` に切り替えた。
+- `egui_wgpu_backend` をツリー内の `egui-wgpu` に変更。
+- `egui` を `0.23` に更新。
+- `wgpu` を `0.17` に更新。
+- `winit` を `0.28` に更新。(#940 を参照)。
 
-***Note: version 0.19 will be the last stable version prior to the bevy-plugin
-refactor/overhaul. See https://github.com/nannou-org/nannou/issues/946 for
-details on the planned changes, and refer to the `bevy-refactor` branch for
-progress once it's available.***
+<!-- ***Note: version 0.19 will be the last stable version prior to the bevy-plugin refactor/overhaul. See https://github.com/nannou-org/nannou/issues/946 for details on the planned changes, and refer to the `bevy-refactor` branch for progress once it's available.*** -->
+***注: バージョン 0.19 は、bevy-plugin のリファクタリング/オーバーホール前の最後の安定版となります。予定されている変更の詳細については [https://github.com/nannou-org/nannou/issues/946](https://github.com/nannou-org/nannou/issues/946) を参照し、利用可能になった後の進捗については `bevy-refactor` ブランチを参照してください。***
 
 ---
 
 # `nannou` 0.18.1 (2021-12-17)
 
-- Expose missing `begin()` method in `geom::path::Builder`.
+<!-- - Expose missing `begin()` method in `geom::path::Builder`.
 - Set window class for X11 running apps.
-- Ensure wakeup calls (`UserEvent`s) provide updates in `Wait` mode.
+- Ensure wakeup calls (`UserEvent`s) provide updates in `Wait` mode. -->
+- `geom::path::Builder` に欠けていた `begin()` メソッドを公開。
+- X11 で動作するアプリのウィンドウクラスを設定する。
+- ウェイクアップコール (`UserEvent`s) が `Wait` モードで更新を提供するようにした。
 
 ---
 
@@ -48,38 +59,35 @@ progress once it's available.***
 
 ### wgpu 0.9 -> 0.11
 
-**Note:** As of wgpu 0.10, all nannou projects now require either:
+<!-- **Note:** As of wgpu 0.10, all nannou projects now require either: -->
+**Note:** wgpu 0.10の時点で、すべてのnannouプロジェクトはどちらかを必要とします：
 
-1. The following line in their top-level cargo manifest:
+<!-- 1. The following line in their top-level cargo manifest: -->
+1. トップレベル貨物マニフェストの以下の行：
    ```toml
    resolver = "2"
    ```
-   OR
-2. All packages must use the 2021 edition (or later) of Rust, e.g.
+   <!-- OR -->
+  または
+<!-- 2. All packages must use the 2021 edition (or later) of Rust, e.g. -->
+2. すべてのパッケージはRustの2021エディション（またはそれ以降）を使用しなければなりません。
    ```toml
    edition = "2021"
    ```
 
-This requirement is due to wgpu 0.10's reliance on the new version of cargo's
-dependency resolver and how it unifies features. Without either of the above
-amendments, you will likely run into strange upstream compilation errors. You
-can read more about the cargo dependency resolver versions here:
+<!-- This requirement is due to wgpu 0.10's reliance on the new version of cargo's dependency resolver and how it unifies features. Without either of the above amendments, you will likely run into strange upstream compilation errors. You can read more about the cargo dependency resolver versions here: -->
+この要件は、wgpu 0.10が新しいバージョンのcargoの依存関係リゾルバに依存していることと、それがどのように機能を統一しているかによるものです。上記の修正のいずれかがないと、おそらく奇妙なアップストリームコンパイルエラーに遭遇するでしょう。cargoの依存性リゾルバのバージョンについては、こちらを参照してください：
 
-https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+[https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions](https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions)
 
 - As of wgpu 0.10, it is now pure Rust! No more SPIR-V cross.
-- The concept of the wgpu `SwapChain` has been removed by merging it into the
-  `Surface`, simplifying internals and improving approachability.
-- WGSL is now wgpu's default shader format. All internal shaders and examples
-  have been updated to use WGSL instead of SPIR-V.
-- A new `spirv` feature has been added that enables the old behaviour of
-  accepting SPIR-V. This is disabled by default to try and keep build times low.
+- The concept of the wgpu `SwapChain` has been removed by merging it into the `Surface`, simplifying internals and improving approachability.
+- WGSL is now wgpu's default shader format. All internal shaders and examples have been updated to use WGSL instead of SPIR-V.
+- A new `spirv` feature has been added that enables the old behaviour of accepting SPIR-V. This is disabled by default to try and keep build times low.
 - `TextureUsage`, `BufferUsage`, `ColorWrite` are renamed to plural.
-- Renamed `TextureUsage` consts: `SAMPLED` -> `TEXTURE_BINDING`, `STORAGE` ->
-  `STORAGE_BINDING`.
+- Renamed `TextureUsage` consts: `SAMPLED` -> `TEXTURE_BINDING`, `STORAGE` -> `STORAGE_BINDING`.
 - Renamed `InputStepMode` to `VertexStepMode`.
-- Readable storage textures are no longer a part of the base API. They are now
-  exposed via format-specific features, non-portably.
+- Readable storage textures are no longer a part of the base API. They are now exposed via format-specific features, non-portably.
 - Added limits for binding sizes, vertex data, per-stage bindings, and others.
 - Adds ability to request a software (fallback) adapter.
 

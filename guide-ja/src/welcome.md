@@ -2,7 +2,7 @@
 # ようこそ!
 
 <!-- **Nannou is an open-source, creative-coding toolkit for Rust.** -->
-**NannouはオープンソースのRust用クリエイティブ・コーディング・ツールキットです。
+**NannouはオープンソースのRust用クリエイティブ・コーディング・ツールキットです。**
 
 <!-- The aim of this guide is to help you find the information you are looking for.
 Whether you are new to Nannou and are looking for a place to start, or you are an experienced Nannou user looking for more advanced tutorials, this book should have something for you! -->
@@ -10,13 +10,13 @@ Whether you are new to Nannou and are looking for a place to start, or you are a
 初めてNannouを利用される方で、何から始めたらよいかをお探しの方にも、経験豊富なNannouユーザーの方で、より高度なチュートリアルをお探しの方にも、本書はきっとお役に立つはずです！
 
 <!-- As excited as we are about developing tools for creative coding, we are equally excited about fostering a warm, welcoming and inclusive community. Please make yourself familiar with our [Code of Conduct](/code_of_conduct.md) and feel free to join us on the Nannou [Slack](https://communityinviter.com/apps/nannou/nannou-slack) or [Matrix](https://matrix.to/#/+nannou:matrix.org) community. -->
-私たちは、創造的なコーディングのためのツールを開発することに興奮していますが、暖かく歓迎し、包括的なコミュニティを育成することにも同じように興奮しています。私たちの[行動規範](/code_of_conduct.md)をよく理解し、気軽にNannouの[Slack](https://communityinviter.com/apps/nannou/nannou-slack)または[Matrix](https://matrix.to/#/+nannou:matrix.org)のコミュニティにお気軽にご参加ください。
+私たちは、創造的なコーディングのためのツールを開発することに熱中していますが、暖かく歓迎し、包括的なコミュニティを育成することにも同じように熱中しています。私たちの[行動規範](/code_of_conduct.md)をよく理解し、Nannouの[Slack](https://communityinviter.com/apps/nannou/nannou-slack)または[Matrix](https://matrix.to/#/+nannou:matrix.org)のコミュニティにお気軽にご参加ください。
 
 <!-- ### [Why Nannou?](/why_nannou.md) -->
 ### [なぜNannouなのか](/why_nannou.md)
 
 <!-- Here you can read about the motivations and philosophy behind Nannou. Why start Nannou? What drives forward progress? -->
-ここでは、Nannouの動機と哲学についてお読みいただけます。なぜNannouを始めたのか？何が前進の原動力なのか？
+ここでは、Nannouの開発動機と哲学についてお読みいただけます。なぜNannouを始めたのか？何が前進の原動力なのか？
 
 <!-- ### [Getting Started](/getting_started.md) -->
 ### [はじめに](/getting_started.md)
@@ -49,4 +49,4 @@ Nannouの背後にある設計哲学、プロジェクトの設計方法、そ�
 ### [ショーケース](/showcases.md)
 
 <!-- See what's possible with Nannou! A collection of projects made with Nannou. -->
-Nannouの可能性をご覧ください！Nannouで作られたプロジェクトの数々。
+Nannouの可能性をご覧ください！Nannouで作られた数々のプロジェクト。
